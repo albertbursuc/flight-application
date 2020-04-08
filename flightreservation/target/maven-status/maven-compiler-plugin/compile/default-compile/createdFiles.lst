@@ -1,0 +1,12 @@
+com\bursuc\flightreservation\entities\Reservation.class
+com\bursuc\flightreservation\FlightreservationApplication.class
+com\bursuc\flightreservation\repos\ReservationRepository.class
+com\bursuc\flightreservation\controllers\FlightController.class
+com\bursuc\flightreservation\entities\Flight.class
+com\bursuc\flightreservation\entities\User.class
+com\bursuc\flightreservation\repos\FlightRepository.class
+com\bursuc\flightreservation\controllers\UserController.class
+com\bursuc\flightreservation\entities\Passenger.class
+com\bursuc\flightreservation\repos\UserRepository.class
+com\bursuc\flightreservation\repos\PassengerRepository.class
+com\bursuc\flightreservation\entities\AbstractEntity.class
