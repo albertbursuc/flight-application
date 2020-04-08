@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=locationweb/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bursuc.location.service{LocationService.java[LocationService" modifiers="513" timestamp="1585992453191"/>
+    <typeInfo handle="=locationweb/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bursuc.location.util{EmailUtil.java[EmailUtil" modifiers="513" timestamp="1586001584766"/>
+    <typeInfo handle="=flightreservation/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bursuc.flightreservation.services{ReservationService.java[ReservationService" modifiers="513" timestamp="1586284117861"/>
+    <typeInfo handle="=flightcheckin/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bursuc.flightcheckin.integration{ReservationRestClient.java[ReservationRestClient" modifiers="513" timestamp="1586287587704"/>
+</typeInfoHistroy>

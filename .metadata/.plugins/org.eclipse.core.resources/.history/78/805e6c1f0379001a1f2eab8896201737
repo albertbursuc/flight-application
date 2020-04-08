@@ -1,0 +1,38 @@
+package com.bursuc.flightreservation.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bursuc.flightreservation.dto.ReservationUpdateRequest;
+import com.bursuc.flightreservation.entities.Reservation;
+import com.bursuc.flightreservation.repos.ReservationRepository;
+
+@RestController
+public class ReservationRESTController {
+	
+	@Autowired
+	ReservationRepository reservationRepository;
+	
+	@GetMapping("reservations/{id}")
+	public Reservation findReservation(@PathVariable Long id) {
+		
+		Reservation reservation = reservationRepository.findById(id).get();
+		return reservation;
+	}
+	
+	@PutMapping("/reservations")
+	public Reservation updateReservation(ReservationUpdateRequest request) {
+		Reservation reservation = reservationRepository.findById(request.getId()).get();
+		reservation.setCheckedIn(true);
+		reservation.setNumberOfBags(request.getNumberOfBags());
+		
+		Reservation updatedReservation = reservationRepository.save(reservation);
+		
+		return updatedReservation;
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@page isELIgnored="false" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Reservation details</title>
+</head>
+<body>
+
+<h2>Flight details:</h2>
+
+Airlines: ${reservation.flight.operatingAirlines}
+Flight No: ${reservation.flight.flightNumber}
+Departure city: ${reservation.flight.departureCity}
+Arrival city: ${reservation.flight.arrivalCity}
+Date of departure: ${reservation.flight.dateOfDeparture}
+Estimated departure time: ${reservation.flight.estimatedDepartureTime}
+
+<h2>Passenger details:</h2>
+
+First name: ${reservation.passenger.firstName}
+Last name: ${reservation.passenger.lastName}
+Email: ${reservation.passenger.email}
+Phone: ${reservation.passenger.phone}
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.bursuc.flightreservation.controllers;
+
+public class ReservationController {
+
+}

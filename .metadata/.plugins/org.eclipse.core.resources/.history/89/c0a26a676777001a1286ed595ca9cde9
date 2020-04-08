@@ -1,0 +1,20 @@
+package com.bursuc.flightreservation;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FlightreservationApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FlightreservationApplication.class, args);
+		
+		SimpleDateFormat date = new SimpleDateFormat();
+		System.out.println(date);
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.bursuc.student.dal.repos;
+
+public interface StudentRepository {
+
+}

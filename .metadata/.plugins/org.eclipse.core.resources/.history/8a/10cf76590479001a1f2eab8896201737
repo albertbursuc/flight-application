@@ -1,0 +1,5 @@
+package com.bursuc.flightcheckin.integration;
+
+public interface ReservationRestClient {
+
+}

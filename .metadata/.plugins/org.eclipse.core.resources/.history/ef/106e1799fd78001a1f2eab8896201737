@@ -1,0 +1,14 @@
+package com.bursuc.flightreservation.services;
+
+import com.bursuc.flightreservation.dto.ReservationRequest;
+import com.bursuc.flightreservation.entities.Reservation;
+
+public class ReservationServiceImpl implements ReservationService {
+
+	@Override
+	public Reservation bookFlight(ReservationRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

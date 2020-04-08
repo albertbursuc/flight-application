@@ -1,0 +1,11 @@
+package com.bursuc.location.util;
+
+public class EmailUtilImpl implements EmailUtil {
+
+	@Override
+	public void sendEmail(String address, String subject, String body) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

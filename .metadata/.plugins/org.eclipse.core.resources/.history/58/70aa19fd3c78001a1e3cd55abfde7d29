@@ -1,0 +1,35 @@
+package com.bursuc.flightreservation.controllers;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.bursuc.flightreservation.entities.Flight;
+import com.bursuc.flightreservation.repos.FlightRepository;
+
+@Controller
+public class FlightController {
+	
+	@Autowired
+	FlightRepository flightRepository;
+
+	@PostMapping("/findFlights")
+	public String findFlights(@RequestParam String departureCity, @RequestParam String arrivalCity,
+			@RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate dateOfDeparture, Model model) {
+
+		
+		List<Flight> flights = flightRepository.findFlights(departureCity, arrivalCity, dateOfDeparture);
+		model.addAttribute("flights", flights);
+		return "displayFlights";
+	}
+}

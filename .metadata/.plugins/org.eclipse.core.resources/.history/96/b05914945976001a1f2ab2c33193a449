@@ -1,0 +1,5 @@
+package com.bursuc.location.controllers;
+
+public class LocationController {
+
+}

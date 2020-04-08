@@ -1,0 +1,5 @@
+package com.bursuc.location.repos;
+
+public interface LocationRepository {
+
+}
