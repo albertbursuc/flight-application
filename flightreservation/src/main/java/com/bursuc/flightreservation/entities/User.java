@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class User extends AbstractEntity {
 
+	
+
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -42,4 +44,9 @@ public class User extends AbstractEntity {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password
+				+ "]";
+	}
 }

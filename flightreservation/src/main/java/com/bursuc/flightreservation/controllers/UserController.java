@@ -1,5 +1,7 @@
 package com.bursuc.flightreservation.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,27 +16,35 @@ import com.bursuc.flightreservation.repos.UserRepository;
 @Controller
 public class UserController {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+	
 	@Autowired
 	UserRepository userRepository;
 	
 	@RequestMapping("/showRegistration")
 	public String showRegistrationPage() {
+		LOGGER.info("inside showRegistrationPage()");
 		return "login/registerUser";
 	}
 	
 	@PostMapping ("/registerUser")
 	public String registerUser(@ModelAttribute User user) {
+		LOGGER.info("inside registerUser() " + user);
 		userRepository.save(user);
 		return "login/login";
 	}
 	
 	@RequestMapping("/showLogin")
 	public String showLoginPage() {
+		LOGGER.info("inside showLoginPage()");
 		return "login/login";
 	}
 	
 	@PostMapping("/login")
 	public String loginUser(@RequestParam String email, @RequestParam String password, Model model) {
+		
+		LOGGER.info("inside loginUser() " + email);
+		
 		User user = userRepository.findByEmail(email);
 		if (user.getPassword().equals(password)) {
 			return "findFlights";

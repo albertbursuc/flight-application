@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
-    <fullyQualifiedTypeName name="com.bursuc.flightreservation.repos.UserRepository"/>
-    <fullyQualifiedTypeName name="com.bursuc.flightreservation.entities.User"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
-    <fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
     <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
     <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
     <fullyQualifiedTypeName name="java.sql.Time"/>
@@ -56,8 +49,15 @@
     <fullyQualifiedTypeName name="org.springframework.mail.javamail.JavaMailSender"/>
     <fullyQualifiedTypeName name="org.springframework.mail.javamail.MimeMessageHelper"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="com.bursuc.flightreservation.util.PDFGenerator"/>
-    <fullyQualifiedTypeName name="com.bursuc.flightreservation.util.EmailUtil"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfPTable"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.controllers.UserController"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.controllers.ReservationController"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.controllers.FlightController"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.services.ReservationServiceImpl"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.util.EmailUtil"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.util.PDFGenerator"/>
+    <fullyQualifiedTypeName name="com.bursuc.flightreservation.controllers.ReservationRESTController"/>
 </qualifiedTypeNameHistroy>

@@ -1,13 +1,11 @@
 package com.bursuc.flightreservation.controllers;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.convert.JodaTimeConverters.DateTimeToDateConverter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
@@ -21,6 +19,9 @@ import com.bursuc.flightreservation.repos.FlightRepository;
 @Controller
 public class FlightController {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(FlightController.class);
+
+	
 	@Autowired
 	FlightRepository flightRepository;
 
@@ -28,9 +29,12 @@ public class FlightController {
 	public String findFlights(@RequestParam String departureCity, @RequestParam String arrivalCity,
 			@RequestParam @DateTimeFormat(iso = ISO.DATE) Date dateOfDeparture, Model model) {
 
+		LOGGER.info("inside findFlights() from " + departureCity + " to " + arrivalCity + " on " + dateOfDeparture);
 		
 		List<Flight> flights = flightRepository.findFlights(departureCity, arrivalCity, dateOfDeparture);
 		model.addAttribute("flights", flights);
+		
+		LOGGER.info("Flights found are: " + flights);
 		return "displayFlights";
 	}
 }

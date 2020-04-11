@@ -32,7 +32,7 @@ public class CheckInController {
 	}
 	
 	@PostMapping("/completeCheckIn")
-	public String completeCheckIn(@RequestParam Long reservationId,@RequestParam int numberOfBags, Model model) {
+	public String completeCheckIn(@RequestParam Long reservationId, @RequestParam int numberOfBags, Model model) {
 		
 		ReservationUpdateRequest reservationUpdateRequest = new ReservationUpdateRequest();
 		reservationUpdateRequest.setId(reservationId);
