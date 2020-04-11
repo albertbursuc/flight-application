@@ -1,4 +1,4 @@
-# FLIGHT RESERVATION - WEB APPLICATION
+# FLIGHT RESERVATION AND CHECK IN - WEB APPLICATION
 
 This is a small project that I made to learn more about the Spring technology.
 
@@ -9,3 +9,4 @@ What is this project about?
 * Search flights (Database used MySQL 8)
 * Select flight
 * Do a reservation
+* Receive confirmation email
