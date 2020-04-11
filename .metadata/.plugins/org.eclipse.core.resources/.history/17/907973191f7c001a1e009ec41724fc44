@@ -1,0 +1,5 @@
+package com.bursuc.flightreservation.security.config;
+
+public class WebSecurityConfig {
+
+}

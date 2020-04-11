@@ -1,0 +1,5 @@
+package com.bursuc.flightreservation.services;
+
+public interface SecurityService {
+
+}

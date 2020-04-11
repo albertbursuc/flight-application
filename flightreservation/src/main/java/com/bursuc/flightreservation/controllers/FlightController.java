@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bursuc.flightreservation.entities.Flight;
@@ -36,5 +37,10 @@ public class FlightController {
 		
 		LOGGER.info("Flights found are: " + flights);
 		return "displayFlights";
+	}
+	
+	@RequestMapping("/admin/showAddFlight")
+	public String showAddFlight() {
+		return "addFlight";
 	}
 }

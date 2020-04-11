@@ -1,0 +1,25 @@
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url= jdbc:mysql://localhost:3306/reservation?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&
+spring.datasource.username=root
+spring.datasource.password=Abi&Evi96
+
+
+spring.jpa.show-sql=true
+
+spring.mvc.view.prefix=/WEB-INF/jsps/
+spring.mvc.view.suffix=.jsp
+
+server.servlet.context-path=/flightreservation
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=albertbursuc@gmail.com
+spring.mail.password=dczynreqaouhgeul
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+logging.level.root = info
+
+com.bursuc.flightreservation.itinerary.dirpath=C:\\Users\\alber\\Desktop\\[FreeCourseLab.com] Udemy - End to End Java Project Development Using Spring Boot\\15. Generate and Email Itinerary\\email\\reservation
+com.bursuc.flightreservation.itinerary.email.subject=Itinerary for your flight
+com.bursuc.flightreservation.itinerary.email.body=Please find your itinerary attached.

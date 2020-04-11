@@ -1,5 +1,0 @@
-package com.bursuc.location.service;
-
-public class LocationServiceImpl implements LocationService {
-
-}

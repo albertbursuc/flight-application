@@ -1,16 +1,24 @@
 package com.bursuc.flightreservation.entities;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class User extends AbstractEntity {
-
-	
 
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
+
+	@ManyToMany
+	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+	private Set<Role> roles;
 
 	public String getFirstName() {
 		return firstName;
@@ -48,5 +56,13 @@ public class User extends AbstractEntity {
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password
 				+ "]";
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 }

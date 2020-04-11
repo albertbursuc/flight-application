@@ -5,3 +5,8 @@
 1586620156915	Extract constant 'ITINERARY_FOR_YOUR_FLIGHT'
 1586620180711	Rename field 'ITINERARY_FOR_YOUR_FLIGHT'
 1586620200171	Extract constant 'PLEASE_FIND_YOUR_ITINERARY_ATTACHED'
+1586626451670	Move compilation unit
+1586626504043	Move 'logback.xml' to 'static'
+1586626615135	Encapsulate field 'roles'
+1586626643080	Encapsulate field 'users'
+1586626922936	Delete element

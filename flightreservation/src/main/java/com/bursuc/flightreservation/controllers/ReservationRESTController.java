@@ -25,7 +25,7 @@ public class ReservationRESTController {
 	@Autowired
 	ReservationRepository reservationRepository;
 	
-	@GetMapping("reservations/{id}")
+	@GetMapping("/reservations/{id}")
 	public Reservation findReservation(@PathVariable Long id) {
 		
 		LOGGER.info("inside findReservation for id: " + id);

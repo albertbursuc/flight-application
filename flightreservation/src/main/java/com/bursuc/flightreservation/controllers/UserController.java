@@ -3,6 +3,10 @@ package com.bursuc.flightreservation.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bursuc.flightreservation.entities.User;
 import com.bursuc.flightreservation.repos.UserRepository;
+import com.bursuc.flightreservation.services.SecurityService;
 
 @Controller
 public class UserController {
@@ -19,7 +24,13 @@ public class UserController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
-	UserRepository userRepository;
+	private SecurityService securityService;
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@RequestMapping("/showRegistration")
 	public String showRegistrationPage() {
@@ -30,6 +41,7 @@ public class UserController {
 	@PostMapping ("/registerUser")
 	public String registerUser(@ModelAttribute User user) {
 		LOGGER.info("inside registerUser() " + user);
+		user.setPassword(encoder.encode(user.getPassword()));
 		userRepository.save(user);
 		return "login/login";
 	}
@@ -43,10 +55,15 @@ public class UserController {
 	@PostMapping("/login")
 	public String loginUser(@RequestParam String email, @RequestParam String password, Model model) {
 		
+		boolean loginResponse = securityService.login(email, password);
+		
 		LOGGER.info("inside loginUser() " + email);
 		
 		User user = userRepository.findByEmail(email);
-		if (user.getPassword().equals(password)) {
+		if (loginResponse) {
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+			model.addAttribute("loggedUser", userDetails.getUsername());
 			return "findFlights";
 		}else {
 		model.addAttribute("wrong", "Wrong email or password, please try again");

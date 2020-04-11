@@ -11,6 +11,7 @@
 
 <form action="findFlights" method="post">
 <pre>
+You are logged in as: ${loggedUser}<br/>
 From: <input type="text" name="departureCity">
 To: <input type="text" name="arrivalCity">
 Departure Date: <input type="text" name="dateOfDeparture"/> (yyyy-MM-dd)
